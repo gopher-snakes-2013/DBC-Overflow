@@ -8,7 +8,7 @@
       <%= link_to submission.title, submission.url, target:"_blank" %>
     </li>
   </ul>
-  <%= link_to "Add a Comment", new_comment_path %>
+  <%= link_to "Add a Comment", new_submission_comment_path(submission) %>
     <% submission.comments.each do |comment| %>
       <%= comment.content %>
     <% end %>

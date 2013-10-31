@@ -1,1 +1,4 @@
-MEAT
+<%= form_for [@submission, @comment] do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "Submit" %>
+<% end %>

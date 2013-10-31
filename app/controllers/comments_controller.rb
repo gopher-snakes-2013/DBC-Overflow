@@ -1,9 +1,17 @@
 class CommentsController < ApplicationController
   def new
+    @submission = Submission.find(params[:submission_id])
+    @comment = @submission.comments.new
     render :new
   end
+
   def create
-    @comment = Comment.create(params[:comment])
-    redirect_to root_path
+    @submission = Submission.find(params[:submission_id])
+    @comment = @submission.comments.new(params[:comment])
+    if @comment.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 end
