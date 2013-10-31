@@ -37,6 +37,6 @@ extra stuff:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 we need to do this:
-- [ ] fix re-route when input invalid things to /new
+- [ ] add user feedback for back entries when creating new submissions
 - [ ] finish old test that didn't finish (feature testing)
 
