@@ -1,6 +1,8 @@
 DBC-Overflow
 ============
 
+Heroku app:  http://dbcoverflow.herokuapp.com/
+
 potential user stories
 
 
