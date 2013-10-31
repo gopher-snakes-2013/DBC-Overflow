@@ -2501,3 +2501,2334 @@ Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.8ms)
   [1m[35m (0.1ms)[0m  COMMIT
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 47ms (Views: 39.8ms | ActiveRecord: 5.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (34.9ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 18:46:10 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 18:46:10 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 42ms (ActiveRecord: 36.0ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 18:46:10 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 18:46:10 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 11:46:10 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.3ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 11:46:10 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 18:46:10 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 18:46:10 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (21.7ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 4.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:00:59 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:00:59 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.2ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (21.7ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "submissions" 
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:01:48 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:01:48 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.8ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "submissions" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.4ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (22.7ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 25.1ms | ActiveRecord: 4.8ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.9ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:03:03 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:03:03 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 12ms (ActiveRecord: 6.0ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (21.3ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 4.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.8ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:04:06 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:04:06 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 17ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (2.9ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 4.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:08:58 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:08:58 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.7ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 4ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (21.2ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "submissions" 
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.3ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:09:39 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:09:39 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.1ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "submissions" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.6ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (100.8ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 4.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:16:16 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:16:16 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 10ms (ActiveRecord: 4.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (21.2ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 4.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:17:05 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:17:05 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.6ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (22.5ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 4.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.7ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:17:32 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:17:32 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.4ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "users" does not exist
+LINE 5:              WHERE a.attrelid = '"users"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"users"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (20.8ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 4.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.6ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:19:18 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:19:18 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 12ms (ActiveRecord: 6.4ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "users" does not exist
+LINE 5:              WHERE a.attrelid = '"users"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"users"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (21.0ms)[0m  [1mTRUNCATE TABLE "submissions" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 32ms (Views: 7.9ms | ActiveRecord: 22.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:19:28 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:19:28 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.6ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "users" does not exist
+LINE 5:              WHERE a.attrelid = '"users"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"users"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (7.3ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "submissions" 
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.4ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:19:56 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:19:56 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.1ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "submissions" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.3ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (5.7ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 24ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.3ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:20:31 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:20:31 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 10ms (ActiveRecord: 5.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (24.7ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 28ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "submissions" 
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.6ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:20:55 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:20:55 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "submissions" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (100.4ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"buffy", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 0ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "submissions" 
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:22:39 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:22:39 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.4ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "submissions" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (23.2ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"buffy", "password"=>"[FILTERED]"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:23:39 UTC +00:00], ["password", "crazytime"], ["updated_at", Thu, 31 Oct 2013 19:23:39 UTC +00:00], ["username", "buffy"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 14ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.2ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:23:39 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:23:39 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 10ms (ActiveRecord: 1.3ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (23.3ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"buffy", "password"=>"[FILTERED]"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:23:50 UTC +00:00], ["password", "crazytime"], ["updated_at", Thu, 31 Oct 2013 19:23:50 UTC +00:00], ["username", "buffy"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "submissions" 
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:23:50 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:23:50 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "submissions" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (4.9ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 4.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:26:07 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:26:07 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"buffy", "password"=>"[FILTERED]"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:26:07 UTC +00:00], ["password", "crazytime"], ["updated_at", Thu, 31 Oct 2013 19:26:07 UTC +00:00], ["username", "buffy"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (115.7ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "submissions" 
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:27:45 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:27:45 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 5.4ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "submissions" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.4ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"buffy", "password"=>"[FILTERED]"}}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:27:45 UTC +00:00], ["password", "crazytime"], ["updated_at", Thu, 31 Oct 2013 19:27:45 UTC +00:00], ["username", "buffy"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"new guy"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:27:45 UTC +00:00], ["password", nil], ["updated_at", Thu, 31 Oct 2013 19:27:45 UTC +00:00], ["username", "new guy"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (24.0ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 17ms (Views: 8.5ms | ActiveRecord: 6.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SubmissionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.3ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 19:30:51 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 19:30:51 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 12ms (ActiveRecord: 6.2ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"buffy", "password"=>"[FILTERED]"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 19:30:51 UTC +00:00], ["password", "crazytime"], ["updated_at", Thu, 31 Oct 2013 19:30:51 UTC +00:00], ["username", "buffy"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"new guy"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.8ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (5.8ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.7ms)[0m  SELECT "submissions".* FROM "submissions" 
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 7.5ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+Processing by SubmissionsController#create as HTML
+  Parameters: {"submissions"=>{"title"=>"This is our title", "url"=>"https://www.google.com"}}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (40.3ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:25:04 UTC +00:00], ["title", "This is our title"], ["updated_at", Thu, 31 Oct 2013 21:25:04 UTC +00:00], ["url", "https://www.google.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 49ms (ActiveRecord: 41.2ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "submissions" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" 
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"buffy", "password"=>"[FILTERED]"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 21:25:04 UTC +00:00], ["password", "crazytime"], ["updated_at", Thu, 31 Oct 2013 21:25:04 UTC +00:00], ["username", "buffy"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 34ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"new guy"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 48ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.4ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (29.8ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:25:12 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:25:12 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.7ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.2ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:28:29 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:28:29 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.3ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:29:27 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:29:27 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (7.5ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:30:19 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:30:19 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:30:19 UTC +00:00], ["password", nil], ["updated_at", Thu, 31 Oct 2013 21:30:19 UTC +00:00], ["username", "arbitrary_string"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.4ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.3ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:31:09 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:31:09 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:31:09 UTC +00:00], ["password", nil], ["updated_at", Thu, 31 Oct 2013 21:31:09 UTC +00:00], ["username", "arbitrary_string"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.3ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 21:33:19 UTC +00:00], ["password", nil], ["updated_at", Thu, 31 Oct 2013 21:33:19 UTC +00:00], ["username", "arbitrary_string"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:33:19 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:33:19 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.7ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:34:23 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:34:23 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 21:34:24 UTC +00:00], ["password", nil], ["updated_at", Thu, 31 Oct 2013 21:34:24 UTC +00:00], ["username", "arbitrary_string"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (5.6ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:37:09 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:37:09 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:37:09 UTC +00:00], ["password", nil], ["updated_at", Thu, 31 Oct 2013 21:37:09 UTC +00:00], ["username", "arbitrary_string"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.4ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:44:03 UTC +00:00], ["title", "this is a title"], ["updated_at", Thu, 31 Oct 2013 21:44:03 UTC +00:00], ["url", "http://www.thisisaurl.com"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:44:03 UTC +00:00], ["password", nil], ["updated_at", Thu, 31 Oct 2013 21:44:03 UTC +00:00], ["username", "arbitrary_string"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'arbitrary_string' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.4ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.2ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:44:09 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:44:09 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:44:09 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.5ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:44:09 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 21:44:09 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:44:09 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:44:09 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.5ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.3ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:46:17 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:46:17 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:46:17 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.8ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:46:17 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 21:46:17 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:46:17 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:46:17 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 14:46:17 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (5.5ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.0ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:47:01 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:47:01 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:47:01 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.9ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 14:47:01 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:47:01 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:47:01 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:47:01 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.5ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:47:01 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.6ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (7.0ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.8ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 21:52:19 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:52:19 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:52:19 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.7ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:52:19 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.5ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 21:52:19 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:52:19 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 14:52:19 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 14:52:19 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 21:52:19 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 21:52:19 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 14:52:19 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (71.2ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:10:55 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:10:55 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:10:55 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.5ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:10:55 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:10:55 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:10:55 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:10:55 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.6ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:10:55 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (4.8ms)
+  Rendered users/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 2.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:10:55 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:10:55 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:10:55 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (87.1ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.0ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:20:28 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:20:28 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:20:28 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (1.0ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:20:28 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:20:28 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:20:28 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:20:28 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:20:28 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 17ms (Views: 9.0ms | ActiveRecord: 2.8ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:20:28 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:20:28 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:20:28 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (1.2ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:20:28 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:20:29 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 22:20:29 UTC +00:00], ["username", "baby"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 18ms (ActiveRecord: 2.8ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:20:29 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (7.6ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.9ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 3.1ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["username", "baby"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 18ms (ActiveRecord: 3.5ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:22:51 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:22:51 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered users/_newuser_form.html.erb (1.0ms)
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 3.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.2ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.7ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.7ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (3.8ms)
+  Rendered users/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 2.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["username", "baby"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 18ms (ActiveRecord: 3.5ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:23:39 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/new
+Completed 302 Found in 36ms (ActiveRecord: 1.0ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:23:39 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.7ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (25.5ms)
+  Rendered users/new.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 2.1ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 3.0ms | ActiveRecord: 2.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["username", "baby"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 3.6ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.8ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.5ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:06 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.4ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:06 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.2ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.9ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.7ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (4.1ms)
+  Rendered users/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 17ms (Views: 9.9ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["username", "baby"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 3.9ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 22:24:19 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 15:24:19 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 2.9ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (5.9ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (8.1ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.7ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.7ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (4.7ms)
+  Rendered users/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 18ms (Views: 10.4ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["username", "baby"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 2.3ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:19:41 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 16:19:41 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (7.6ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (9.5ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (24.3ms)
+  Rendered users/new.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 46ms (Views: 38.7ms | ActiveRecord: 2.1ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 3.0ms | ActiveRecord: 2.2ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["username", "baby"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 2.7ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.5ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.4ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:05 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.5ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:05 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "submissions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'dbc_overflow_test'
+  [1m[36m (6.3ms)[0m  [1mTRUNCATE TABLE "submissions", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "submissions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.1ms)[0m  [1mINSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[36mSubmission Load (0.6ms)[0m  [1mSELECT "submissions".* FROM "submissions" [0m
+  Rendered submissions/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.8ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 17ms (Views: 9.3ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "users" ("created_at", "password", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["password", "babybaby"], ["updated_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["username", "baby"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 4.0ms)
+Started GET "/" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.5ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "submissions" ("created_at", "title", "updated_at", "url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["title", "This is the Test Title"], ["updated_at", Thu, 31 Oct 2013 23:20:10 UTC +00:00], ["url", "https://www.facebook.com/"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_newuser_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2013-10-31 16:20:10 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"baby", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'baby' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered users/_newuser_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 36ms (Views: 3.1ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
