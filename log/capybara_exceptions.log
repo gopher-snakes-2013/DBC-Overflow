@@ -1,0 +1,19 @@
+# Logfile created on 2013-10-30 10:54:26 -0700 by logger.rb/31641
+Can't mass-assign protected attributes: utf8, authenticity_token, submissions, commit, action, controller
+/Users/apprentice/Desktop/DBC-Overflow/app/controllers/submissions_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+        new_submission.url = params[:submissions][:url]
+                      ^
+/Users/apprentice/Desktop/DBC-Overflow/app/controllers/submissions_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+        new_submission.url = params[:submissions][:url]
+                      ^
+/Users/apprentice/Desktop/DBC-Overflow/app/controllers/submissions_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+        new_submission.url = params[:submissions][:url]
+                      ^
+/Users/apprentice/Desktop/DBC-Overflow/app/controllers/submissions_controller.rb:12: syntax error, unexpected ')', expecting keyword_end
+undefined method `redirect' for #<SubmissionsController:0x007fb566a3e760>
+undefined local variable or method `submissions_new_path' for #<SubmissionsController:0x007fb5662f7ab0>
+/Users/apprentice/Desktop/DBC-Overflow/app/views/submissions/index.html.erb:10: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/apprentice/Desktop/DBC-Overflow/app/views/submissions/index.html.erb:12: syntax error, unexpected $end, expecting keyword_end
+/Users/apprentice/Desktop/DBC-Overflow/app/views/submissions/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...title, target:_blank submission.url );@output_buffer.safe_co...
+...                               ^
