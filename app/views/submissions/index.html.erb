@@ -2,10 +2,15 @@
 
 <h2><%= link_to 'Add resource', new_submission_path %></h2>
 
-<ul>
-  <% @submission.each do |submission| %>
-  <li>
-    <%= link_to submission.title, submission.url, target:"_blank" %>
-  </li>
-  <% end %>
-</ul>
+<% @submission.each do |submission| %>
+  <ul>
+    <li>
+      <%= link_to submission.title, submission.url, target:"_blank" %>
+    </li>
+  </ul>
+  <%= link_to "Add a Comment", new_comment_path %>
+    <% submission.comments.each do |comment| %>
+      <%= comment.content %>
+    <% end %>
+<% end %>
+
