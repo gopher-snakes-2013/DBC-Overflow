@@ -2,6 +2,8 @@
 
 <h2><%= link_to 'Add resource', new_submission_path %></h2>
 
+<h2><%= link_to 'Sign Up!', new_user_path %></h2>
+
 <% @submission.each do |submission| %>
   <ul>
     <li>
@@ -13,4 +15,3 @@
       <%= comment.content %>
     <% end %>
 <% end %>
-
