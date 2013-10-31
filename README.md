@@ -8,6 +8,7 @@ potential user stories
 
 - as a guest, I can see the site
 - as a guest, I can submit a link
+
 - as a guest, I can see the links
 - as a guest, i can click on the links to go to resources
 
@@ -18,7 +19,6 @@ submissions
 
 - as a guest, I can submit a description of my link (read more)
 - as a guest, i can click on the links to see the description and comments
-- as a guest, I can comment on links
 - as a guest, I can up and down vote links
 - as a guest, I can up and down vote comments
 - as a guest, I can register
@@ -38,3 +38,6 @@ submissions
 - fix re-route when input invalid things to /new
 - finish old test that didn't finish (feature testing)
 
+-------------------------------------------------------------------
+work on this
+- as a guest, I can comment on links
