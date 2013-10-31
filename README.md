@@ -33,3 +33,8 @@ submissions
 - as a registered user, i can see all of my submitted links
 - as a registered user, i can favor links (bookmark)
 - as a registered user, i can follow users (twitter)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- fix re-route when input invalid things to /new
+- finish old test that didn't finish (feature testing)
+
