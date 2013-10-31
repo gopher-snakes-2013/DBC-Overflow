@@ -1,0 +1,11 @@
+<%= form_for [@user] do |f| %>
+  <div class="user_form"> Username: </div>
+  <%= f.text_field :username %>
+  <br>
+  <div class="user_form"> Password: </div>
+  <%= f.password_field :password %>
+  <br>
+  <div class="user_form" id="pass_requirement"> *Must be at least 6 characters* </div>
+  <br>
+  <%= f.submit "Register" %>
+<% end %>
