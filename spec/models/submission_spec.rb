@@ -17,7 +17,6 @@ describe Submission do
     my_submission.url = 'http://www.thisisaurl.com'
     my_submission.title = 'this is a title'
     my_submission.save
-    p my_submission
     my_submission.should be_valid
   end
 
@@ -25,9 +24,9 @@ describe Submission do
     my_submission.url = 'invalid URL'
     my_submission.title = 'this is a title'
     my_submission.save
-    p my_submission
     my_submission.should_not be_valid
   end
 
+  it { should have_many :comments }
 
 end

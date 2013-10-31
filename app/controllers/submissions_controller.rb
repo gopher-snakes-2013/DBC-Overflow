@@ -16,4 +16,8 @@ class SubmissionsController < ApplicationController
       redirect_to new_submission_path
     end
   end
+
+  def show
+
+  end
 end
