@@ -5291,3 +5291,102 @@ Served asset /new.css - 200 OK (1ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-30 17:29:58 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/submissions/new" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/new.html.erb within layouts/application (1.0ms)
+Compiled index.css  (0ms)  (pid 8417)
+Compiled layout.css  (0ms)  (pid 8417)
+Compiled new.css  (0ms)  (pid 8417)
+Compiled application.css  (1ms)  (pid 8417)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Served asset /index.css - 200 OK (2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Served asset /layout.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/new.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Served asset /new.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:20 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-30 17:41:23 -0700
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.4ms)[0m  SELECT "submissions".* FROM "submissions" 
+  Rendered submissions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:23 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:23 -0700
+Served asset /index.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:23 -0700
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:23 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:23 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:23 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/submissions/new" for 127.0.0.1 at 2013-10-30 17:41:24 -0700
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:24 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:24 -0700
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:24 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:24 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-30 17:41:24 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-10-30 17:41:24 -0700
+Served asset /index.css - 304 Not Modified (0ms)
