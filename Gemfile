@@ -22,6 +22,11 @@ end
 
 gem 'jquery-rails'
 
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -29,8 +34,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara-rails'
-  gem 'database_cleaner'
 end
 # group :test do
 # end

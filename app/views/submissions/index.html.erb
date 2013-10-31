@@ -1,0 +1,9 @@
+<h1>see all resources:</h1>
+
+<ul>
+  <% @submission.each do |submission| %>
+  <li>
+    <%= link_to submission.title, submission.url, target:"_blank" %>
+  </li>
+  <% end %>
+</ul>

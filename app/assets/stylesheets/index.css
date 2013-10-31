@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 0.8em;
+  padding: 0.4em;
+  border: 1px solid #34495e;
+  border-radius: 2px;
+}
+
+li:hover, li:focus, li:active {
+  background-color: #fff;
+}
+
+ul > li > a {
+  text-decoration: none;
+  color: #34495e;
+}

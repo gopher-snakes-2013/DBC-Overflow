@@ -1,3 +1,4 @@
 DbcOverflow::Application.routes.draw do
-  resources :submissions, only: [:index]
+  root to: "submissions#index"
+  resources :submissions, only: [:index, :new, :create]
 end
