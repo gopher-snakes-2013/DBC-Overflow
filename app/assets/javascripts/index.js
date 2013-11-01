@@ -12,7 +12,6 @@ var commentHandler = {
   },
 
   appendComment: function(e, data) {
-    $("#comment_content").val("");
     $("#comment-list-"+ data.submission_id).append(data.comment_content+"<br/>");
     $(".add_comment form").slideUp("slow");
     $(":input[name='comment[content]']").val("");

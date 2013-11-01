@@ -28,11 +28,11 @@ input[type='submit'] {
   text-align: center;
 }
 
-/*.new_user input {
-  width: 250px;
-  height: 20px;
+.errors {
+  text-align: center;
+  color: rgba(200,0,0,0.9);
   font-size: 15px;
-}*/
+}
 
 .new_user #pass_requirement {
   font-size: 17px;
