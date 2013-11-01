@@ -5,6 +5,39 @@ input[type='text'] {
   border: 0;
   display: block;
   width: 50%;
-
 }
+
+input[type='password'] {
+  margin: 0 auto;
+  outline: 0;
+  border-radius: 3px;
+  border: 0;
+  display: block;
+  width: 50%;
+}
+
+input[type='submit'] {
+  margin: 0 auto;
+  border-radius: 3px;
+  border: 1px solid;
+  display: block;
+}
+
+.user_form {
+  font-size: 24px;
+  text-align: center;
+}
+
+.errors {
+  text-align: center;
+  color: rgba(200,0,0,0.9);
+  font-size: 15px;
+}
+
+.new_user #pass_requirement {
+  font-size: 17px;
+}
+
+
+
 
