@@ -1,0 +1,4 @@
+<%= form_for [submission, comment], remote: true, html: { class: "hidden" } do |f| %>
+  <%= f.text_area :content, :rows => 5, :cols => 100 %>
+  <%= f.submit "Submit" %>
+<% end %>

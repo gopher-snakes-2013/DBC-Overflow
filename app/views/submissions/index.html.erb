@@ -10,8 +10,13 @@
       <%= link_to submission.title, submission.url, target:"_blank" %>
     </li>
   </ul>
-  <%= link_to "Add a Comment", new_submission_comment_path(submission) %>
-    <% submission.comments.each do |comment| %>
-      <%= comment.content %>
-    <% end %>
+
+<div class="add_comment">
+  <%= link_to "Add a Comment", "#", remote: true, class: "new-comment" %>
+  <%= render partial: "comments/form", layout: false, locals: { submission: submission, comment: submission.comments.new } %>
+</div>
+
+<div class="comments" id="comment-list-<%= submission.id %>">
+  <%= render partial: "comments/list", layout: false, locals: { submission: submission } %>
+</div>
 <% end %>

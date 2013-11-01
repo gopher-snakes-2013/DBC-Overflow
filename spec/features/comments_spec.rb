@@ -9,11 +9,11 @@ feature "View Comments" do
       expect(page).to have_content("all about penguins")
     end
 
-    scenario "user can add a new comment" do
+    scenario "user can add a new comment and should stay on home page" do
       submission = Submission.create(url: "http://penguin.com", title: "A Resource")
       visit root_path
       click_on "Add a Comment"
-      expect(current_path).to eq(new_submission_comment_path(submission))
+      expect(current_path).to eq(root_path)
     end
   end
 end
@@ -26,10 +26,9 @@ feature "New Comments" do
     click_on "Add a Comment"
   end
 
-  scenario "can be added, then user is redirected to home page" do
+  scenario "can be added to home page" do
     fill_in "comment_content", with: "i like penguins a lot, thanks"
     click_button "Submit"
-    expect(current_path).to eq(root_path)
     expect(page).to have_content("i like penguins a lot, thanks")
   end
 end

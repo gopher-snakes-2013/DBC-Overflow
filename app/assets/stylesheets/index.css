@@ -22,3 +22,11 @@ a{
   text-decoration: none;
   color: #34495e;
 }
+
+.hidden {
+  display:none;
+}
+
+textarea {
+  width:100%;
+}
