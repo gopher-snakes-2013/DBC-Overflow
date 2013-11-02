@@ -11,6 +11,15 @@
     </li>
   </ul>
 
+<div class="cast_vote">
+   <%= render partial: "votes/form", layout: false, locals: { submission: submission, vote: submission.votes.new } %>
+
+  <span class='tally'></span>
+</div>
+
+
+
+
 <div class="add_comment">
   <%= link_to "Add a Comment", "#", remote: true, class: "new-comment" %>
   <%= render partial: "comments/form", layout: false, locals: { submission: submission, comment: submission.comments.new } %>
