@@ -1,9 +1,18 @@
 class VotesController < ApplicationController
 
   def create
-    @vote = Vote.new
-    @vote.direction = params[:direction]
+    @submission = Submission.find(params[:submission_id])
+    @vote = @submission.votes.new
+    p params
+    @vote.direction = params[:vote][:direction]
     @vote.save
-    redirect_to '/'
+
+    tally = @submission.votes.sum(:direction)
+
+    if tally
+      render json: {tally: tally}
+    else
+      redirect_to '/'
+    end
   end
 end
