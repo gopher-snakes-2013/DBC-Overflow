@@ -36,6 +36,10 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'faker', '~> 1.1.2'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
 
 group :production do

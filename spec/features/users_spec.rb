@@ -2,12 +2,14 @@ require 'spec_helper'
 
 feature "User browsing the website" do
 
-  before(:each) do
-    submission = Submission.new
-    submission.title = "This is the Test Title"
-    submission.url = "https://www.facebook.com/"
-    submission.save
-  end
+  submission = FactoryGirl.build(:submission)
+  # before(:each) do
+
+  #   submission = Submission.new
+  #   submission.title = "This is the Test Title"
+  #   submission.url = "https://www.facebook.com/"
+  #   submission.save
+  # end
 
   context "on homepage" do
 
