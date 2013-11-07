@@ -1,13 +1,14 @@
-var commentHandler = {
+// not crazy about the name *Hanlder
+var CommentHandler = {
 
   toggleForm: function() {
     var $newCommentForm = $(this).parent().find('form')
-    if ($newCommentForm.attr("class") == "hidden"){
+    if ($newCommentForm.hasClass?('hidden')){
       $newCommentForm.slideDown("slow");
       $newCommentForm.attr('class', 'shown')
     } else {
       $newCommentForm.slideUp("slow");
-      $newCommentForm.attr('class', 'hidden')
+      $newCommentForm.addClass('hidden')
     }
   },
 

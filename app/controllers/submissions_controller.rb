@@ -1,10 +1,21 @@
+# index, show, new, create, edit, update, destroy
 class SubmissionsController < ApplicationController
   def index
     @submission = Submission.all
   end
 
-  def new
+  # REVIEW: empty methods and files are evil
+  def show
+
   end
+
+  def new
+    @submission = Submission.new
+  end
+
+  # def edit
+  #   @submission = Submission.find params[:id]
+  # end
 
   def create
     @new_submission = Submission.new
@@ -17,7 +28,4 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  def show
-
-  end
 end

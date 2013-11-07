@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe CommentsController do
-  let(:submission) { Submission.create(title: "i love you", url: "http://iloveu.xxx") }
+  # check out FactoryGirl
+  let(:submission) { create(:submission) }
 
   # it "#new" do
   #   get :new, submission_id: submission.id

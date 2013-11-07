@@ -1,6 +1,8 @@
-<%= form_for [@user] do |f| %>
+// rename this to _form
+<%= form_for @user do |f| %>
   <div class="user_form"> Username: </div>
   <%= f.text_field :username %>
+  avoid using br, use styling and divs/li, etc.
   <br>
   <div class="user_form"> Password: </div>
   <%= f.password_field :password %>

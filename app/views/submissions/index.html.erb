@@ -12,7 +12,7 @@
   </ul>
 
 <div class="cast_vote">
-   <%= render partial: "votes/form", layout: false, locals: { submission: submission, vote: submission.votes.new } %>
+   <%= render "votes/form", submission: submission, vote: submission.votes.new %>
 
   <span class='tally'></span>
 </div>
@@ -22,10 +22,10 @@
 
 <div class="add_comment">
   <%= link_to "Add a Comment", "#", remote: true, class: "new-comment" %>
-  <%= render partial: "comments/form", layout: false, locals: { submission: submission, comment: submission.comments.new } %>
+  <%= render "comments/form", submission: submission, comment: submission.comments.new %>
 </div>
 
 <div class="comments" id="comment-list-<%= submission.id %>">
-  <%= render partial: "comments/list", layout: false, locals: { submission: submission } %>
+  <%= render "comments/list",  submission: submission  %>
 </div>
 <% end %>

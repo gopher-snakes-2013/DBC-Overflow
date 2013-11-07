@@ -1,16 +1,15 @@
 require 'spec_helper'
 
 feature "View Comments" do
+  let(:submission) { Submission.create(url: "http://penguin.com", title: "A Resource") }
   context "on the homepage" do
     scenario "user can see created comments" do
-      submission = Submission.create(url: "http://penguin.com", title: "A Resource")
       comment = submission.comments.create(content: "all about penguins")
       visit root_path
       expect(page).to have_content("all about penguins")
     end
 
     scenario "user can add a new comment and should stay on home page" do
-      submission = Submission.create(url: "http://penguin.com", title: "A Resource")
       visit root_path
       click_on "Add a Comment"
       expect(current_path).to eq(root_path)
@@ -20,7 +19,6 @@ end
 
 feature "New Comments" do
   before(:each) do
-    @submission = Submission.create(url: "http://penguin.com", title: "A Resource")
     @comment = Comment.create(content: "all about penguins", submission_id: 1)
     visit root_path
     click_on "Add a Comment"

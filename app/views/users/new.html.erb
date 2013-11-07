@@ -1,11 +1,12 @@
 <h1> Sign Up! </h1>
 <div class="error_messages">
-  <% if (@errors != nil) %>
+  <% if @errors.any? %>
     <% @errors.each do |error| %>
-    <p class="errors"> <%= error %> </p>
+      <p class="errors"> <%= error %> </p>
     <% end %>
   <% end%>
 </div>
 <div id="new_user_form">
 <%= render "newuser_form" %>
 </div>
+

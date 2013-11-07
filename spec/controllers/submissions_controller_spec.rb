@@ -5,6 +5,8 @@ describe SubmissionsController do
   describe "#index" do
     it "should have an index action" do
       get :index
+      expect(response.status).to eq 200
+      response.status.should eq 200
       expect(response.status.should eq 200)
     end
   end
@@ -12,7 +14,7 @@ describe SubmissionsController do
   describe "#new" do
     it "should have a new action" do
       get :new
-      expect(response.status.should eq 200)
+      expect(response.status.should eq 200) # either use expect or should
     end
   end
 

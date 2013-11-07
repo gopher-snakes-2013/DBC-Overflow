@@ -1,9 +1,2 @@
-<%= form_for [submission, vote], url: submission_votes_path(submission), remote: true do |f| %>
-  <%= f.hidden_field :direction, value: 1 %>
-  <%= f.submit 'Vote Up' %>
-<% end %>
-
-<%= form_for [submission, vote], url: submission_votes_path(submission), remote: true do |f| %>
-  <%= f.hidden_field :direction, value: -1 %>
-  <%= f.submit 'Vote Down' %>
-<% end %>
+<%= upvote %>
+<%= downvote %>

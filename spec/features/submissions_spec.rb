@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 feature "User browsing the website" do
-
   before(:each) do
+    # preferred use let
     submission = Submission.new
     submission.title = "This is the Test Title"
     submission.url = "https://www.facebook.com/"
@@ -12,7 +12,7 @@ feature "User browsing the website" do
   context "on homepage" do
 
     it "can click on the link" do
-      visit ('/')
+      visit root_path
       click_on ('This is the Test Title')
       page.has_content?('Facebook')
     end

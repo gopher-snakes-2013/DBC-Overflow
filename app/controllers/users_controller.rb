@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new
+		# REVIEW: you need to encrypt the password.
 		@user.username = params[:user][:username]
 		@user.password = params[:user][:password]
 		if @user.save
